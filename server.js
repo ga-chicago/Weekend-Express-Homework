@@ -1,7 +1,16 @@
-const express = require('expess');
+const express = require('express');
 const app = express();
 
+require('./db/db.js');
 
+
+
+
+
+
+app.get('/coffee', (req, res) => {
+	res.send('cofvefe');
+})
 
 
 
