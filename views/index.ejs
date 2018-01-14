@@ -3,18 +3,23 @@
 <head>
 	<meta charset="utf-8">
 	<title>Coffee Index</title>
+	<link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
 <body>
 
 <h1>coffee is good for to be of drinking</h1>
 
-<ul>
+<div id="index-container">
 
 	<% for (let i = 0; i < coffee.length; i++) { %>
-	<li> <%=coffee[i].name %></li>
+	<div id="coffee-container">
+		<a href="/coffee/<%= coffee[i].id %>"> <%= coffee[i].name %> <br>
+		<img src="<%= coffee[i].img %>"> </a>
+	</div>
 	<% }%>
 
-</ul>
+	<a href="/coffee/new">add another caffeinated beverage</a>
+</div>
 
 </body>
 </html>
