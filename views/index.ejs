@@ -12,10 +12,12 @@
   <form>
     <%for(let i=0; i<cars.length; i++) {%>
       <li>
-        Make:<%=cars[i].make%>
-        Model:<%=cars[i].model%>
-        Year:<%=cars[i].year%>
-        Color:<%=cars[i].color%>
+        <a href="/cars/<%=cars[i].id%>">
+        Make:<%=cars[i].make%><br>
+      </a>
+        Model:<%=cars[i].model%><br>
+        Year:<%=cars[i].year%><br>
+        Color:<%=cars[i].color%><br>
         <form action="/cars/<%=cars[i].id%>?_method=delete" method="POST">
           <button type="submit" value="DELETE">Delete</button>
         </form>

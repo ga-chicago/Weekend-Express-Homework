@@ -3,29 +3,27 @@ const router = express.Router();
 const Car = require('../models/cars.js')
 
 
-// this is the home route 
+// cars path 
 router.get('/', (req,res)=>{
-  // search the database
-  Car.find({}, (err, allCars)=>{
-    if(err)console.log(err);
-    // console.log(allCars);
-    res.render('index.ejs', {cars: allCars});
-  });
+ // search the database
+ Car.find({}, (err, allCars)=>{
+   if(err)console.log(err);
+   // console.log(allCars);
+   res.render('index.ejs', {cars: allCars});
+ });
 });
 
-
-// this is the route to make a new car
+// path for the new car form
 router.get('/new', (req,res)=>{
   res.render('../views/new.ejs');
 });
 
 
-// this is the post route to make the new car form work
 router.post('/', (req,res)=>{
   Car.create(req.body, (err, createdCar)=>{
   // res.send(createdCar);
-  console.error(err);
-  res.redirect('/cars');
+  console.error(err)
+  res.redirect('/cars')
   });
 });
 
@@ -43,4 +41,13 @@ router.delete('/:id', (req,res)=>{
   });
 });
 
-module.exports = router;
+
+
+// show route
+router.get('/:id', (req, res)=>{
+  Car.findById(req.params.id, (err, carFound)=>{
+    res.render('show.ejs', {car: carFound})
+  })
+})
+
+module.exports = router; 
