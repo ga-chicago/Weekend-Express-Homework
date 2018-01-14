@@ -2,6 +2,9 @@
 <html>
 <head>
 	<title>Edit <%= movie.title %></title>
+	<link rel="stylesheet" type="text/css" href="/css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet">
+
 </head>
 <body>
 
@@ -10,7 +13,7 @@
 	<form action="/movies/<%= movie.id %>?_method=PUT" method="POST">
 		TITLE:<input type="text" name="title" value=<%= movie.title %>> 
 		YEAR RELEASED:<input type="text" name="yearReleased" value=<%= movie.yearReleased %>> 
-		WATCHED:<input type="checkbox" name="hasBeenWatched" <% if (movie.hasBeenWatched) { -%>
+		WATCHED:<input class="checkbox" type="checkbox" name="hasBeenWatched" <% if (movie.hasBeenWatched) { -%>
 			checked
 		<% } -%>>
 
