@@ -6,7 +6,10 @@ const coffeeSchema = new mongoose.Schema({
 		required: true
 	},
 	region: String,
-	brewed: String,
+	method: {
+		type: String,
+		required: true
+	},
 	mg_caffeine: Number,
 	hot: Boolean
 })
