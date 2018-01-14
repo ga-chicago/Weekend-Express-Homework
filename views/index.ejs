@@ -9,17 +9,19 @@
 <body>
 
 <h1 id="index-header">Types of Coffee I Have Collected</h1>
+<nav id="new-link">
+	<a href="/coffee/new">add another caffeinated beverage</a>
+</nav>
 
 <div id="index-container">
 
 	<% for (let i = 0; i < coffee.length; i++) { %>
 	<div id="coffee-container">
 		<a href="/coffee/<%= coffee[i].id %>"> <%= coffee[i].name %> <br>
-		<img src="<%= coffee[i].img %>"> </a>
+		<img class="index-pic" src="<%= coffee[i].img %>"> </a>
 	</div>
 	<% }%>
 
-	<a href="/coffee/new">add another caffeinated beverage</a>
 </div>
 
 </body>

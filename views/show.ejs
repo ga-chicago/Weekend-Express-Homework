@@ -10,12 +10,12 @@
 
 <div id="show-container">
 	<div id="img-container">
-		<img src="<%= coffee.img %>">
+		<img class="index-pic" src="<%= coffee.img %>">
 	</div>
 	<div id="info-container">
 		<div class="info-box" id="name-and-caffeine">
 			<div id="name"><%= coffee.name %></div>  
-			<div id="caffeine">  ~ <%= coffee.mg_caffeine %>mg caffeine</div>
+			<div id="caffeine"> <%= coffee.mg_caffeine %>mg caffeine</div>
 		</div>
 		<div class="info-box" id="region">Region of origin: <br> <%= coffee.region %></div>
 		<div class="info-box" id="method">Method: <br><%= coffee.method %></div>

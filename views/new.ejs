@@ -4,10 +4,28 @@
 	<meta charset="utf-8">
 	<title>Add a Coffee</title>
 	<link href="https://fonts.googleapis.com/css?family=Arbutus+Slab|Pacifico" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
 <body>
 
-<h1>add a coffee</h1>
+<form action="/coffee" method="POST">
+		
+	<div id="create-container">
+		<div id="container-bg">
+			<div class="info-box">Image URL: <input type="text" name="img"></div>
+			<div class="info-box">Name of Coffee: <input type="text" name="name"></div>  
+			<div class="info-box">Caffeine(mg): <input type="text" name="mg_caffeine"></div>
+			<div class="info-box">Region: <input type="text" name="region"></div>
+			<div class="info-box">Method: <input type="text" name="method"></div>
+			<div class="info-box">Hot? <input type="checkbox" name="hot"> </div>
+		</div>
+	</div>
+	<input type="submit" value="Submit">
+
+</form>
+<nav>
+	<a href="/coffee">return</a>
+</nav>
 
 </body>
 </html>

@@ -3,6 +3,10 @@
 }*/
 
 /* index styling */
+.index-pic {
+	height: 200px;
+	width: 200px;
+}
 #index-header {
 	text-align: center;
 	font-family: 'Pacifico', cursive;
@@ -21,28 +25,33 @@
 #coffee-container {
 	margin: 10px 0 10px 0;
 }
+#new-link {
+	margin: 0 auto;
+	text-align: center;
+}
 
 /* show styling */
 #show-container {
 	height: 200px;
-	width: 750px;
+	width: 950px;
 	display: flex;
 	justify-content: flex-start;
 	font-family: 'Arbutus Slab', serif;
 	background-image: url('../img/subtlebg.jpg')
 }
-/*#img-container {
-	border-right: 1px solid black;
-}*/
+#img-container {
+	height: 200px;
+	width: 200px;
+}
 #info-container {
 	display: flex;
 	justify-content: space-around;
 	flex-direction: column;
-	width: 600px;
+	width: 800px;
 	background-color: rgba(255, 255, 255, 0.5)
 }
 .info-box {
-	margin-left: 10px;
+	margin: 10px;
 }
 #name-and-caffeine {
 	display: flex;
@@ -56,3 +65,18 @@
 	position: relative;
 	top: 45px;
 }
+
+/* new styling */
+#create-container {
+	font-size: 18px;
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+	font-family: 'Arbutus Slab', serif;
+	background-image: url('../img/subtlebg.jpg');
+	width: 320px;
+}
+#container-bg {
+	background-color: rgba(255, 255, 255, 0.7);
+}
+

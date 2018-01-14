@@ -19,7 +19,25 @@ router.route('/')
 			})
 		})
 
-	});
+	})
+	.post((req, res) => {
+
+		if (req.body.hot == 'on') {
+			req.body.hot = true
+		}
+		else {
+			req.body.hot = false
+		}
+
+		if (req.body.img == '') {
+			req.body.img = 'https://i.imgur.com/ezXQZtc.jpg';
+		}
+
+		Coffee.create(req.body, (err, data) => {
+			res.redirect('/coffee');
+		})
+
+	})
 
 router.route('/new')
 	.get((req, res) => {
@@ -42,6 +60,7 @@ router.route('/:id')
 
 
 module.exports = router;
+
 
 
 
