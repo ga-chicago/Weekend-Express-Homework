@@ -1,9 +1,12 @@
 const express = require('express');
 const app = express();
+const bodyParser = require('body-parser')
 
 require('./db/db.js')
 
 
+// middleware
+app.use(bodyParser.urlencoded({extended:true}))
 
 
 const CarController = require('./controller/carController');
