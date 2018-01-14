@@ -60,7 +60,6 @@ router.route("/:id")
 			if (err) {
 				console.log(err)
 			} else {
-				console.log(foundMovie)
 				res.render("show.ejs", {
 					movie: foundMovie
 				})
@@ -68,20 +67,32 @@ router.route("/:id")
 		})
 	})
 	.delete((req, res) => {
-		console.log("started Delete")
 		Movie.findByIdAndRemove(req.params.id, (err, removedFruit) => {
 			if (err) {
 				console.log(err)
 			} else {
-				console.log("hit removed route")
 				res.redirect("/movies")
 			}
 		})
 	})
-
-
-
-
+	.put((req, res) => {
+		if (req.body.hasBeenWatched === "on") {
+			req.body.hasBeenWatched = true;
+		} else {
+			req.body.hasBeenWatched = false;
+		}
+		Movie.findByIdAndUpdate(req.params.id, req.body,
+			(err, updatedMovie) => {
+				if (err) {
+					console.log(err)
+				} else {
+					res.redirect("/movies")
+				}
+			})
+	})
 
 
 module.exports = router;
+
+
+
