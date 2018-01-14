@@ -1,0 +1,22 @@
+{
+  "name": "weekend-express-homework",
+  "version": "1.0.0",
+  "description": "- Fork this repo, and submit a pull request when you are done.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ethan375/Weekend-Express-Homework.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ethan375/Weekend-Express-Homework/issues"
+  },
+  "homepage": "https://github.com/ethan375/Weekend-Express-Homework#readme",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}
