@@ -34,7 +34,10 @@
 </div>
 
 <nav>
-	<a href="/coffee">return</a> | edit | delete
+	<a href="/coffee">return</a> | <a href="/coffee/<%= coffee.id %>/edit">edit</a>  
+	<form action="/coffee/<%= coffee.id %>?_method=DELETE" method="POST"> 
+		<input type="submit" value="delete">
+	</form>
 </nav>
 
 

@@ -46,6 +46,15 @@ router.route('/new')
 
 	});
 
+router.route('/:id/edit')
+	.get((req, res) => {
+		Coffee.findById(req.params.id, (err, data) => {
+			res.render('edit.ejs', {
+				coffee: data
+			})
+		})
+	})
+
 router.route('/:id')
 	.get((req, res) => {
 
@@ -54,8 +63,38 @@ router.route('/:id')
 				coffee: data
 			})
 		})
+	})
+	.put((req, res) => {
 
-	});
+		if (req.body.hot == 'on') {
+			req.body.hot = true
+		}
+		else {
+			req.body.hot = false
+		}
+
+		if (req.body.img == '') {
+			req.body.img = 'https://i.imgur.com/ezXQZtc.jpg';
+		}
+
+		Coffee.findByIdAndUpdate(req.params.id, 
+			req.body, 
+			(err, data) => {
+				console.log(data);
+		})
+		let theId = req.params.id
+		res.redirect('/coffee/' + theId);
+	})
+	.delete((req, res) => {
+
+		Coffee.findByIdAndRemove(req.params.id, (err, data) => {
+			if (err) {
+				console.error(err);
+			}
+			res.redirect('/coffee');
+
+		})
+	})
 
 
 
