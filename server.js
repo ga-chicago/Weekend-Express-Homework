@@ -10,14 +10,12 @@ require('./db/db.js');
 
 
 
-//models
+//models & controllers
 const Coffee = require('./models/coffee.js');
 
+const CoffeeController = require('./controllers/coffeeController.js');
 
-
-app.get('/coffee', (req, res) => {
-	res.send('cofvefe');
-})
+app.use('/coffee', CoffeeController);
 
 
 app.listen(3000, () => {
