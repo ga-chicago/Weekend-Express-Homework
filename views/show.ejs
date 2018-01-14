@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title><%= movie.title %> page</title>
+</head>
+<body>
+
+	<h1><%= movie.title %></h1>
+
+	<p> <%= movie.yearReleased %></p>
+
+	<p> You have
+		<% if(!movie.hasBeenWatched) { %>
+			not
+		<% } %>
+		watched it.
+	</p>
+
+</body>
+</html>

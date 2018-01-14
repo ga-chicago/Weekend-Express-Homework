@@ -26,7 +26,6 @@ router.route("/")
 			if (err) {
 				console.log(err);
 			} else {
-				// res.send(createdMovie)
 				res.redirect("/movies")
 			}
 		})
@@ -40,7 +39,19 @@ router.route("/new")
 	})
 
 
-
+router.route("/:id")
+	.get((req, res) => {
+		Movie.findById(req.params.id, (err, foundMovie) => {
+			if (err) {
+				console.log(err)
+			} else {
+				console.log(foundMovie)
+				res.render("show.ejs", {
+					movie: foundMovie
+				})
+			}
+		})
+	})
 
 
 
