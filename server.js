@@ -1,16 +1,15 @@
 express = require("express");
 app = express();
-
+require("./db/db.js")
 
 
 
 
 
 // Test Route
-
-app.get("/", (req, res) => {
-	res.send("Working")
-})
+// app.get("/", (req, res) => {
+// 	res.send("Working")
+// })
 
 
 
