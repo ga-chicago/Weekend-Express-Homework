@@ -1,0 +1,92 @@
+/** {
+	border: 1px solid black;
+}*/
+/* index styling */
+.index-pic {
+  height: 200px;
+  width: 200px;
+}
+#index-header {
+  text-align: center;
+  font-family: 'Pacifico', cursive;
+  font-size: 50px;
+}
+#index-container {
+  font-family: 'Arbutus Slab', serif;
+  width: 900px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 20px;
+  margin: 0 auto;
+  text-align: center;
+  box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.7);
+}
+#coffee-container {
+  margin: 10px 0 10px 0;
+}
+#new-link {
+  margin: 0 auto;
+  margin-bottom: 20px;
+  text-align: center;
+}
+/* show styling */
+#show-container {
+  height: 200px;
+  width: 950px;
+  display: flex;
+  justify-content: flex-start;
+  font-family: 'Arbutus Slab', serif;
+  background-image: url('../img/subtlebg.jpg');
+}
+#img-container {
+  height: 200px;
+  width: 200px;
+}
+#info-container {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  width: 800px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.info-box {
+  margin: 10px;
+}
+#name-and-caffeine {
+  display: flex;
+  justify-content: flex-start;
+}
+#name {
+  font-size: 64px;
+  align-self: flex-end;
+}
+#caffeine {
+  margin-left: 10px;
+  position: relative;
+  top: 26px;
+}
+#hot-or-cold {
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  top: 15px;
+  left: 890px;
+}
+.hc {
+  height: 60px;
+  width: 60px;
+}
+/* new styling */
+#create-container {
+  font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  font-family: 'Arbutus Slab', serif;
+  background-image: url('../img/subtlebg.jpg');
+  width: 320px;
+}
+#container-bg {
+  background-color: rgba(255, 255, 255, 0.7);
+}

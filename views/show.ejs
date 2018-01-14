@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>View Coffee</title>
+	<link rel="stylesheet" type="text/css" href="/css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Arbutus+Slab|Pacifico" rel="stylesheet">
+</head>
+<body>
+
+<div id="show-container">
+
+	<div id="img-container">
+		<img class="index-pic" src="<%= coffee.img %>">
+	</div>
+
+	<div id="info-container">
+		<div class="info-box" id="name-and-caffeine">
+			<div id="name"><%= coffee.name %></div>  
+			<div id="caffeine"> <%= coffee.mg_caffeine %>mg caffeine</div>
+		</div>
+		<div class="info-box" id="region">Region of origin: <br> <%= coffee.region %></div>
+		<div class="info-box" id="method">Method: <br><%= coffee.method %></div>
+	</div>
+
+	<div id="hot-or-cold">
+		<% if (coffee.hot == true) { %>
+		<img class="hc" src="https://i.imgur.com/h3vUBTs.png">
+		<% } else { %>
+		<img class="hc" src="https://i.imgur.com/OWb5n1M.png">
+		<% } %>
+	</div>
+
+</div>
+
+<nav>
+	<a href="/coffee">return</a> | <a href="/coffee/<%= coffee.id %>/edit">edit</a>  
+	<form action="/coffee/<%= coffee.id %>?_method=DELETE" method="POST"> 
+		<input type="submit" value="delete">
+	</form>
+</nav>
+
+
+
+</body>
+</html>

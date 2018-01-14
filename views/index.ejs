@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Coffee Index</title>
+	<link rel="stylesheet" type="text/css" href="/css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Arbutus+Slab|Pacifico" rel="stylesheet">
+</head>
+<body>
+
+<h1 id="index-header">Types of Coffee I Have Collected</h1>
+<nav id="new-link">
+	<a href="/coffee/new">add another caffeinated beverage</a>
+</nav>
+
+<div id="index-container">
+
+	<% for (let i = 0; i < coffee.length; i++) { %>
+	<div id="coffee-container">
+		<a href="/coffee/<%= coffee[i].id %>"> <%= coffee[i].name %> <br>
+		<img class="index-pic" src="<%= coffee[i].img %>"> </a>
+	</div>
+	<% }%>
+
+</div>
+
+</body>
+</html>
