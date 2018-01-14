@@ -3,7 +3,7 @@ const router = express.Router();
 const Car = require('../models/cars.js')
 
 router.get('/', (req,res)=>{
-  res.send('pathworking');
+  res.render('index.ejs');
 });
 
 router.get('/new', (req,res)=>{
@@ -13,8 +13,8 @@ router.get('/new', (req,res)=>{
 router.post('/', (req,res)=>{
   Car.create(req.body, (err, createdCar)=>{
   // res.send(createdCar);
-  console.error(err)
-  res.redirect('/cars')
+  console.error(err);
+  res.redirect('localhost:3000/cars');
   });
 });
 

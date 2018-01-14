@@ -4,9 +4,22 @@
   <title>All Cars</title>
 </head>
 <body>
+  <nav>
+    <a href="localhost:/cars/new">Create a new car</a>
+  </nav>
+
   <h1>Here is a list of all avliable cars</h1>
   <form>
-    
+    <%for(let i=0; i<cars.length; i++) {%>
+      <li>
+        Make:<%=cars[i].make%>
+        Model:<%=cars[i].model%>
+        Year:<%=cars[i].year%>
+        Color:<%=cars[i].color%>
+      </li> 
+
+
+    <%}%>
   </form>
 </body>
 </html>
