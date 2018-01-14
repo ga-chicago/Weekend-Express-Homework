@@ -26,7 +26,7 @@ router.route("/")
 			if (err) {
 				console.log(err);
 			} else {
-				res.redirect("/movies")
+				res.redirect("/movies/" + createdMovie.id)
 			}
 		})
 	})
@@ -49,6 +49,17 @@ router.route("/:id")
 				res.render("show.ejs", {
 					movie: foundMovie
 				})
+			}
+		})
+	})
+	.delete((req, res) => {
+		console.log("started Delete")
+		Movie.findByIdAndRemove(req.params.id, (err, removedFruit) => {
+			if (err) {
+				console.log(err)
+			} else {
+				console.log("hit removed route")
+				res.redirect("/movies")
 			}
 		})
 	})

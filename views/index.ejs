@@ -11,7 +11,24 @@
 
 	<ul>
 		<% for(let i = 0; i < movies.length; i++) {%>
-			<a href="/movies/<%= movies[i].id%>"><li><%=movies[i].title %></li></a>
+		<li>
+			<a href="/movies/<%= movies[i].id%>"><%=movies[i].title %></a>
+
+			has
+			<% if (!movies[i].hasBeenWatched) { -%>
+				not
+			<% } -%>
+
+			been watched.
+
+			<form action="/movies/<%= movies[i].id %>?_method=DELETE" method="POST">
+				<button type="submit">Remove Movie</button>
+			</form>
+
+
+			
+
+		</li>
 		<% } %>
 
 
