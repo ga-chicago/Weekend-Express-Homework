@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Edit <%= movie.title %></title>
+</head>
+<body>
+
+	<h1>Add New Movie</h1>
+
+	<form action="/movies/<%= movie.id %>?_method=PUT" method="POST">
+		TITLE:<input type="text" name="title" value=<%= movie.title %>> 
+		YEAR RELEASED:<input type="text" name="yearReleased" value=<%= movie.yearReleased %>> 
+		WATCHED:<input type="checkbox" name="hasBeenWatched" <% if (movie.hasBeenWatched) { -%>
+			checked
+		<% } -%>>
+
+		<br>
+		<button type="submit">Submit Edits</button>
+	</form>
+
+
+	<a href="/movies/<%= movie.id %>"><button type="submit">Back to movie page</button></a>
+
+
+
+</body>
+</html>

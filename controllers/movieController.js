@@ -38,7 +38,22 @@ router.route("/new")
 		res.render("new.ejs")
 	})
 
+// Edit Route
+router.route("/:id/edit")
+	.get((req, res) => {
+		Movie.findById(req.params.id, (err, foundMovie) => {
+			if (err) {
+				console.log(err)
+			} else {
+				res.render("edit.ejs", {
+					movie: foundMovie
+				})
+			}
+		})
+	})
 
+
+// Id Route
 router.route("/:id")
 	.get((req, res) => {
 		Movie.findById(req.params.id, (err, foundMovie) => {
