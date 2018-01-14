@@ -1,12 +1,14 @@
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser')
+const methodOverride = require('method-override');
 
 require('./db/db.js')
 
 
 // middleware
 app.use(bodyParser.urlencoded({extended:true}))
+app.use(methodOverride('_method'))
 
 
 const CarController = require('./controller/carController');

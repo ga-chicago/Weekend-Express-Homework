@@ -16,6 +16,9 @@
         Model:<%=cars[i].model%>
         Year:<%=cars[i].year%>
         Color:<%=cars[i].color%>
+        <form action="/cars/<%=cars[i].id%>?_method=delete" method="POST">
+          <button type="submit" value="DELETE">Delete</button>
+        </form>
       </li> 
 
 
