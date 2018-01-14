@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>View Coffee</title>
+	<link rel="stylesheet" type="text/css" href="/css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Arbutus+Slab|Pacifico" rel="stylesheet">
+</head>
+<body>
+
+<div id="show-container">
+	<div id="img-container">
+		<img src="<%= coffee.img %>">
+	</div>
+	<div id="info-container">
+		<div class="info-box" id="name-and-caffeine">
+			<div id="name"><%= coffee.name %></div>  
+			<div id="caffeine">  ~ <%= coffee.mg_caffeine %>mg caffeine</div>
+		</div>
+		<div class="info-box" id="region">Region of origin: <br> <%= coffee.region %></div>
+		<div class="info-box" id="method">Method: <br><%= coffee.method %></div>
+	</div>
+</div>
+<nav>
+	<a href="/coffee">return</a> | edit | delete
+</nav>
+
+
+
+</body>
+</html>

@@ -5,21 +5,39 @@ const Coffee = require('../models/coffee.js');
 
 
 
-router.get('/', (req, res) => {
+router.route('/')
+	.get((req, res) => {
 
-	Coffee.find({}, (err, data) => {
+		Coffee.find({}, (err, data) => {
 
-		console.log(data);
+			if (err) {
+				console.error(err);
+			}
 
-		if (err) {
-			console.error(err);
-		}
-
-		res.render('index.ejs', {
-			coffee: data
+			res.render('index.ejs', {
+				coffee: data
+			})
 		})
+
 	});
-});
+
+router.route('/new')
+	.get((req, res) => {
+
+		res.render('new.ejs');
+
+	});
+
+router.route('/:id')
+	.get((req, res) => {
+
+		Coffee.findById(req.params.id, (err, data) => {
+			res.render('show.ejs', {
+				coffee: data
+			})
+		})
+
+	});
 
 
 
