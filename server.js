@@ -6,6 +6,13 @@ require("./db/db.js")
 
 
 
+
+
+
+const movieController = require("./controllers/movieController.js");
+app.use("/movies", movieController)
+
+
 // Test Route
 // app.get("/", (req, res) => {
 // 	res.send("Working")

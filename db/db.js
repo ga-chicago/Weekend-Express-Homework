@@ -1,7 +1,9 @@
 const mongoose = require("mongoose");
 
 
-mongoose.connect("mongodb://localhost:27017/movies");
+mongoose.connect("mongodb://localhost:27017/movies", {
+	useMongoClient: true
+});
 
 mongoose.connection.on("connected", () => {
 	console.log("Mongodb is connected")
