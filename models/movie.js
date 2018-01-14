@@ -4,7 +4,6 @@ const movieSchema = new mongoose.Schema({
 	title: {
 		type: String,
 		require: true,
-		unique: true
 	},
 	yearReleased: {
 		type: Number,

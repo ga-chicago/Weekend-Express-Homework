@@ -6,8 +6,30 @@ const Movie = require("../models/movie.js")
 // Movies Route
 router.route("/")
 	.get((req, res) => {
-		res.send("Hit index route");
-		console.log("Hit index route");
+		Movie.find({}, (err, allMovies) => {
+			if (err) {
+				console.log(err);
+			} else {
+				res.render("index.ejs", {
+					movies: allMovies
+				})
+			}
+		})
+	})
+	.post((req ,res) => {
+		if (req.body.hasBeenWatched === "on") {
+			req.body.hasBeenWatched = true;
+		} else {
+			req.body.hasBeenWatched = false;
+		}
+		Movie.create(req.body, (err, createdMovie) => {
+			if (err) {
+				console.log(err);
+			} else {
+				// res.send(createdMovie)
+				res.redirect("/movies")
+			}
+		})
 	})
 
 

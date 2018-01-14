@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Movie Watch List</title>
+</head>
+<body>
+
+	<h1>Movie List</h1>
+
+	<a href="/movies/new"><button type="submit">Create new button</button></a>
+
+	<ul>
+		<% for(let i = 0; i < movies.length; i++) {%>
+			<li><%=movies[i].title %></li>
+		<% } %>
+
+
+	</ul>
+
+</body>
+</html>
