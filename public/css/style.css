@@ -21,12 +21,14 @@
 	padding: 20px;
 	margin: 0 auto;
 	text-align: center;
+	box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.7);
 }
 #coffee-container {
 	margin: 10px 0 10px 0;
 }
 #new-link {
 	margin: 0 auto;
+	margin-bottom: 20px;
 	text-align: center;
 }
 
@@ -62,8 +64,20 @@
 	align-self: flex-end;
 }
 #caffeine {
+	margin-left: 10px;
 	position: relative;
-	top: 45px;
+	top: 26px;
+}
+#hot-or-cold {
+	height: 50px;
+	width: 50px;
+	position: absolute;
+	top: 15px;
+	left: 890px;
+}
+.hc {
+	height: 60px;
+	width: 60px;
 }
 
 /* new styling */

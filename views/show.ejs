@@ -9,9 +9,11 @@
 <body>
 
 <div id="show-container">
+
 	<div id="img-container">
 		<img class="index-pic" src="<%= coffee.img %>">
 	</div>
+
 	<div id="info-container">
 		<div class="info-box" id="name-and-caffeine">
 			<div id="name"><%= coffee.name %></div>  
@@ -20,7 +22,17 @@
 		<div class="info-box" id="region">Region of origin: <br> <%= coffee.region %></div>
 		<div class="info-box" id="method">Method: <br><%= coffee.method %></div>
 	</div>
+
+	<div id="hot-or-cold">
+		<% if (coffee.hot == true) { %>
+		<img class="hc" src="https://i.imgur.com/h3vUBTs.png">
+		<% } else { %>
+		<img class="hc" src="https://i.imgur.com/OWb5n1M.png">
+		<% } %>
+	</div>
+
 </div>
+
 <nav>
 	<a href="/coffee">return</a> | edit | delete
 </nav>
