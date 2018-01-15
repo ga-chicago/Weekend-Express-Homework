@@ -7,6 +7,7 @@ const whoSchema = new mongoose.Schema({
 	species: String,
 	birthDate: Date,
 	skills: [String],
+	friend: Boolean,
 	seasons: Number
 
 });

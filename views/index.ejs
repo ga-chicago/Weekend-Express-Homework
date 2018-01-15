@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dr Who Characters</title>
+</head>
+<body>
+	<h1>Welcome Whovian!</h1>
+	<h2>Choose a character below to learn more:</h2>
+	<a href="/whovians/new">Or add your own character here.</a>
+
+	<ul>
+		<% for (let i = 0; i < whovians.length; i++) { %>
+			<li><a href=""></a><%= whovians[i].name %></li>
+		<% } %>
+	</ul>
+</body>
+</html>
