@@ -21,7 +21,7 @@
     "ejs": "^2.5.7",
     "express": "^4.16.2",
     "gulp": "^3.9.1",
-    "gup": "^1.1.1",
+    "gulp-less": "^3.4.0",
     "method-override": "^2.3.10",
     "mongoose": "^4.13.9"
   }

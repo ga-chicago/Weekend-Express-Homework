@@ -56,7 +56,6 @@ router.get('/:id/edit', (req,res)=>{
     res.render('edit.ejs', {car:car})
   });
   router.put('/id', (req,res)=>{
-    console.log("Path being hit")
     console.log(req.body, 'reqbody')
   });
 });

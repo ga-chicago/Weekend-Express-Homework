@@ -10,6 +10,10 @@ require('./db/db.js')
 app.use(bodyParser.urlencoded({extended:true}))
 app.use(methodOverride('_method'))
 
+// using static files in express
+app.use(express.static('public'))
+
+
 
 const CarController = require('./controller/carController');
 // every path in the controller file will now start with cars
