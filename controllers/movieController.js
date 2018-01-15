@@ -32,13 +32,9 @@ router.route('/:index')
 		});	
 	})
 	.put((req,res)=>{
-		req.body.year = Number(req.body.year);
-		console.log(req.params.id)
-		console.log(typeof req.params.id)
-		console.log('route working')
-		// Movie.findByIdAndUpdate(req.params.id,req.body,(err,modelUpdate)=>{
-		// 	response.redirect('/movies/');
-		// })
+		Movie.findByIdAndUpdate(req.params.index,req.body,(err,modelUpdate)=>{
+			res.redirect('/movies/');
+		})
 	})
 	.delete((req,res)=>{
 		Movie.findByIdAndRemove(req.params.index, (err, remove)=>{
