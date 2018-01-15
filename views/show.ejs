@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <title><%=car.name%></title>
+</head>
+<body>
+  <nav>
+    <a href="/cars">Index of all cars</a>
+  </nav>
+
+  <h1><%=car.make%> <%=car.model%></h1>
+
+  <ul>
+    <li>
+      Make:<%=car.make%><br>
+      Model:<%=car.model%><br>
+      Year:<%=car.year%><br>
+      Color:<%=car.color%>
+      <form action="/cars/<%=car.id%>?_method=delete" method="POST">
+        <button  type="submit" value="DELETE">Delete</button>
+      </form>
+
+    </li>
+  </ul>
+
+</body>
+</html>

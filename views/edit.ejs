@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <title><%=car.make%><%=car.model%></title>
+</head>
+<body>
+
+  <h1>Edit your <%=car.make%></h1>
+
+    <form action="/cars" method="PUT">
+    Make:<input type="text" name="make" value="<%=car.make%>"><br>
+    Model:<input type="text" name="model" value="<%=car.model%>"><br>
+    Year:<input type="date" name="year" value="<%=car.year%>"><br>
+    Color:<input type="text" name="color" value="<%=car.color%>"><br>
+    <input type="submit" name="submit changes"><br>
+  </form>
+
+</body>
+</html>

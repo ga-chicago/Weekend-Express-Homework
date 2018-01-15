@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <title>All Cars</title>
+</head>
+<body>
+  <nav>
+    <a href="cars/new">Create a new car</a>
+  </nav>
+
+  <h1>Here is a list of all avliable cars</h1>
+  <form>
+    <%for(let i=0; i<cars.length; i++) {%>
+      <li>
+        Make:<%=cars[i].make%><br>
+        Model:<a href="/cars/<%=cars[i].id%>">
+          <%=cars[i].model%><br>
+        </a>
+        Year:<%=cars[i].year%><br>
+        Color:<%=cars[i].color%><br>
+        <form action="/cars/<%=cars[i].id%>?_method=delete" method="POST">
+          <button type="submit" value="DELETE">Delete</button>
+        </form>
+        <a href="cars/<%=cars[i].id%>/edit">Edit your car</a>
+      </li> 
+
+
+    <%}%>
+  </form>
+</body>
+</html>
