@@ -5,7 +5,7 @@ const express = require('express');
 // make smaller name for importing express methods
 const app = express();
 //run a database message file
-//require('db/db.js')
+//require('./db/db.js')
 // import bodyParser
 const bodyParser = require('body-parser');
 // import method override
@@ -19,6 +19,12 @@ app.use(methodOverride('_method'));
 // middleware that uses express.static to share 
 app.use(express.static('public'))
 
+// import Criminals controller
+const CriminalsController = require('./controllers/criminalsController.js')
+
+// use Criminals controller
+
+app.use('/criminals/', CriminalsController);
 
 
 

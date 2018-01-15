@@ -1,11 +1,12 @@
 const mongoose = require('mongoose');
 
-const criminalSchema = new mongoose.Schema({
-	name: {type: String},
-	primaryAttribute: {type: String},
+const criminalsSchema = new mongoose.Schema({
+	name: {type: String, require: true},
+	crime: {type: String, require: true},
+
 	 
 })
 
-const Sergio = mongoose.model('Sergio', sergioSchema);
+const Criminals = mongoose.model('Criminals', criminalsSchema);
 
-module.exports = Sergio; 
+module.exports = Criminals; 
