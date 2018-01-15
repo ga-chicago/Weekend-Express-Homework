@@ -13,9 +13,9 @@ app.use(bodyParser.urlencoded({
 	extended: false
 }));
 
-app.get('/', (req, res) => {
-  res.redirect('/movies');
-});
+// app.get('/', (req, res) => {
+//   res.redirect('/movies');
+// });
 
 const MoviesController = require('./controllers/movieController');
 app.use('/movies/', MoviesController);

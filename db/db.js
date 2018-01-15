@@ -1,5 +1,8 @@
 const mongoose = require('mongoose');
 
+// const Movies = require('../models/movieModels.js');
+// const movieData = require('../populateMovies.js');
+
 mongoose.connect('mongodb://localhost:27017/movies',{useMongoClient: true});
 
 mongoose.connection.once('open', ()=>{
@@ -13,3 +16,8 @@ mongoose.connection.on('disconnected', () => {
 mongoose.connection.on('error', () => {
 	console.log('there was an error connecting', error);
 })
+
+// Populate database
+// Movies.collection.insertMany(movieData,(err, data) => {
+//     mongoose.connection.close();
+// });

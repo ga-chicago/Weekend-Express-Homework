@@ -3,6 +3,17 @@
 	<title>Movie App</title>
 </head>
 <body>
-
+	<h1>Just some good movies</h1>
+	<a href="/movies/new">Enter your favorite movie</a>
+	<% for (let i = 0; i < movies.length; i++) { %>
+		<a href="/movies/<%= movies[i].id %>">
+			<div class="index-page">
+				<img height="150" width="100" src="<%= movies[i].img %>">
+			</div>
+		</a>
+		<form action="/movies/<%= movies[i].id %>?_method=DELETE" method="POST">
+			<input type="submit" value="delete">
+		</form>
+	<% } %>
 </body>
 </html>

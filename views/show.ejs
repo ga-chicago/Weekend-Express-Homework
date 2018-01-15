@@ -1,8 +1,16 @@
 <html>
 <head>
-	<title></title>
+	<title>Show page</title>
 </head>
 <body>
-show page 
+	<div>
+		<img height="600" width="400" src="<%= movie.img %>">
+		<ul>
+			<li>Title: <%= movie.name %></li>
+			<li>Year: <%= movie.year %></li>
+			<li>Genre: <%= movie.genre %></li>
+			<a href="/movies/<%= movie.id %>/edit">edit</a>
+		</ul>
+	</div>
 </body>
 </html>
