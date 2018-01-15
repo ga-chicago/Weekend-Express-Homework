@@ -16,9 +16,10 @@
       Model:<%=car.model%><br>
       Year:<%=car.year%><br>
       Color:<%=car.color%>
-      <form>
-        <button action="/:id/cars/<%=car.id%>?_method=DELETE" type="submit" value="delete">Delete</button>
+      <form action="/cars/<%=car.id%>?_method=delete" method="POST">
+        <button  type="submit" value="DELETE">Delete</button>
       </form>
+
     </li>
   </ul>
 

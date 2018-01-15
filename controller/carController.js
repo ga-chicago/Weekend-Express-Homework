@@ -46,8 +46,20 @@ router.delete('/:id', (req,res)=>{
 // show route
 router.get('/:id', (req, res)=>{
   Car.findById(req.params.id, (err, carFound)=>{
-    res.render('show.ejs', {car: carFound})
-  })
-})
+    res.render('show.ejs', {car: carFound});
+  });
+});
+
+// edit route
+router.get('/:id/edit', (req,res)=>{
+  Car.findById(req.params.id, (err, car)=>{
+    res.render('edit.ejs', {car:car})
+  });
+  router.put('/id', (req,res)=>{
+    console.log("Path being hit")
+    console.log(req.body, 'reqbody')
+  });
+});
+
 
 module.exports = router; 
