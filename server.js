@@ -4,6 +4,8 @@ const port = 3000;
 const express = require('express');
 // make smaller name for importing express methods
 const app = express();
+// require mongoose
+const mongoose = require('mongoose');
 //run a database message file
 //require('./db/db.js')
 // import bodyParser
@@ -14,6 +16,8 @@ const methodOverride = require('method-override')
 app.use(bodyParser.urlencoded({
 	extended: true
 }))
+// connects mongoose
+mongoose.connect("mongodb://localhost:27017/cars")
 // middleware that uses method-override module to make up for things not allowed in HTML5
 app.use(methodOverride('_method'));
 // middleware that uses express.static to share 

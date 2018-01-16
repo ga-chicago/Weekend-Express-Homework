@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<h1>Index Car Page</h1>
+
+	<ul>
+	 <% for (let i=0; i< criminals.length; i++) {%> -->
+		<li>
+			
+			<a href="/criminals/<%= criminals[i].id%>">
+			<%= criminals[i].name %>
+			</a>
+			's crime
+			is 
+			<%= criminals[i].crime %>
+
+			</li>
+		<% } %>
+	</ul>
+
+</body>
+</html>
