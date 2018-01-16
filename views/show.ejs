@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title> Criminal Show page</title>
+</head>
+<body>
+	<h1>Criminal Show page</h1>
+	<nav>
+		<a href="/criminals">index page of Criminals</a>
+	</nav>
+	<ul>	
+		<li>
+			<%=criminal.name%>		
+			's crime is
+			<%=criminal.crime%>
+			.
+			This criminal is 
+			<%if(!criminal.inPrison){%> not <% }%>
+			in prison.
+		</li>	
+	</ul>
+	</form>
+</body>
+</html>
