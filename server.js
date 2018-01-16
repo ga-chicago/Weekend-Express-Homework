@@ -18,7 +18,7 @@ app.use(bodyParser.urlencoded({
 }))
 // connects mongoose
 mongoose.connect("mongodb://localhost:27017/cars")
-// middleware that uses method-override module to make up for things not allowed in HTML5
+// middleware that uses method-override module to allow things not allowed in HTML5
 app.use(methodOverride('_method'));
 // middleware that uses express.static to share 
 app.use(express.static('public'))

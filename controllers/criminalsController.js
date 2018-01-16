@@ -57,21 +57,51 @@ router.route('/:id')
 	// this function shows criminals by Id
 	.get((req,res) => {
 
-		Criminals.findById(req.params.id, (err, fruitFound)=> {
+		Criminals.findById(req.params.id, (err, criminalFound)=> {
 			if (err) {
 				console.log(err)
 			} else {
 				res.render('show.ejs', {
-					fruit: fruitFound
+					criminal: criminalFound
 				})
 			}
 			
 		})
 	})
+	.delete((req, res) => { 
+		Criminals.findByIdAndRemove(req.params.id, (err, criminalRemoved) => {
+			if (err) {
+				console.log(err)
+			} else {
+				
+				res.redirect("/criminals")
+			}
+		})
+	})
+	.put((req, res)=> { 
+		
+
+		if (req.body.inPrison === "on") {
+			req.body.inPrison = true;
+		} else {
+			req.body.inPrison = false;
+		}
+		Criminals.findByIdAndUpdate(req.params.id, req.body,
+			(err, editedCriminal) => {
+				if (err) {
+					console.log(err)
+				} else {
+					 console.log("edit made")
+					res.redirect("/criminals")
+				}
+			}
+		)
+	})
+
 
 // this is for the EDIT route
 router.route("/:id/edit")
-	// this function finds the criminal by Id and edits it
+	// this function finds the criminal by Id
     .get((req, res) => {
 		Criminals.findById(req.params.id, (err, criminalFound) => {
 			if (err) {

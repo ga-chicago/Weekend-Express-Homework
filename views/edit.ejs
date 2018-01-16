@@ -5,16 +5,17 @@
 	<title></title>
 </head>
 <body>
-	<h1>New criminal page</h1>
-	<form action="/criminal<%= criminal.id %>?_method=PUT" method="POST">
-		Name: <input type="text" name="name" value=<% fruit.name%>>
-		Crime: <input type="text" name="crime" value=<% fruit.color>
+	<h1>Edit criminal page</h1>
+	The Criminal's name is: <%=criminal.name %>
+	<form action="/criminals/<%= criminal.id %>?_method=PUT" method="POST">
+		Name: <input type="text" name="name" value=<% criminal.name%>>
+		Crime: <input type="text" name="crime" value=<% criminal.crime%>>
 		Is in prison: <input type="checkbox" name="inPrison">
 		<br />
 		<%if (criminal.inPrison === true){%>
 		checked
 		<%}%>
-		<input type="submit" name="" value="Create Criminal" /> 
+		<input type="submit" name="" value="Edit Criminal" /> 
 <a href="/criminals/"></a>
 	</form>
 </body>
