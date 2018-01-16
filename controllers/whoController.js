@@ -76,11 +76,17 @@ router.put('/:id', (req, res) => {
 		req.body, 
 		(err, updatedModel) => {
 			if(err) console.log(err);
-			res.redirect('/whovians')
+			res.redirect('/whovians');
 	})
 })
 
 // DELETE ROUTE
+router.delete('/:id', (req, res) => {
+	Whovian.findByIdAndRemove(req.params.id, (err, response) => {
+		if(err) console.log(err);
+		res.redirect('/whovians');
+	})
+})
 
 
 // STOP FORGETTING TO EXPORT
