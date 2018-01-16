@@ -11,6 +11,7 @@ require('./db/db.js');
 // MIDDLEWARE
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(methodOverride('_method'));
+app.use(express.static('./public'));
 
 
 // CONTROLLER
