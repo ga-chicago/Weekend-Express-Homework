@@ -27,7 +27,7 @@ router.route("/")
 			})
 		})
 	}) 	
-	//
+	// creates new criminals in a post request
 	.post((req, res) => {
 		if (req.body.inPrison === "on") {
 			req.body.inPrison = true;
@@ -44,12 +44,47 @@ router.route("/")
 		})
 	})
 
-// all methods for "/criminals/new"
+// all methods for NEW route
 router.route("/new")
 	// this function creates new criminals in the NEW page
 	.get((req, res) => { // New Route
 		res.render("new.ejs")
 	})
+
+
+// this is for SHOW route
+router.route('/:id')
+	// this function shows criminals by Id
+	.get((req,res) => {
+
+		Criminals.findById(req.params.id, (err, fruitFound)=> {
+			if (err) {
+				console.log(err)
+			} else {
+				res.render('show.ejs', {
+					fruit: fruitFound
+				})
+			}
+			
+		})
+	})
+
+// this is for the EDIT route
+router.route("/:id/edit")
+	// this function finds the criminal by Id and edits it
+    .get((req, res) => {
+		Criminals.findById(req.params.id, (err, criminalFound) => {
+			if (err) {
+				console.log(err)
+			} else {
+				res.render("edit.ejs", {
+					criminal: criminalFound
+				})	
+			}
+		})
+	})
+
+
 
 
 router.get('*', (req,res)=>{
