@@ -7,14 +7,12 @@ router.route('/')
 		Movie.find({},(err, Movie)=>{
 			if (err) console.log(err);
 			res.render('index.ejs',{movies: Movie});
-		})
-		
+		})	
 })
 	.post((req,res)=>{
 		req.body.year = Number(req.body.year);
 
 		Movie.create(req.body,(err,createdMovie)=>{
-			console.log(createdMovie);
 			res.redirect('/movies/');
 		});	
 })
