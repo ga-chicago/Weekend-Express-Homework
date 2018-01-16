@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+    <title><%= unicorn.name %> page</title>
+    <link type="text/css" href="/css/style.css" rel="stylesheet">
+</head>
+<body>
+<h1>Unicorn Show Page</h1>
+<a href="/unicorns/new">🌈 🌟 Create a new Unicorns 🦄 🍬</a>
+
+<nav>
+    <a href="/unicorns"> &lt; Index of All Unicorns</a>
+</nav>
+
+<h1><%= unicorn.name %> page</h1>
+
+<ul>
+    <li>
+        The unicorns name is
+        <%= unicorn.name %>
+        and is
+        <%= unicorn.color %>.
+        in color. He is
+        <% if(!unicorn.hungry) { %> not
+        <% } %>
+        hungry.
+
+    </li>
+</ul>
+
+</body>
+</html>
