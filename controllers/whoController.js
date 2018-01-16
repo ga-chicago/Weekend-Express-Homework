@@ -45,6 +45,21 @@ router.get('/', (req, res) => {
 	
 });
 
+// SHOW ROUTE
+router.get('/:id', (req, res) => {
+	// get the information on that character
+	Whovian.findById(req.params.id, (err, foundWhovian) => {
+		if(err) console.log(err);
+		res.render('show.ejs', { whovian: foundWhovian})
+	})
+	
+})
+// EDIT ROUTE
+
+// UPDATE
+
+// DELETE ROUTE
+
 
 // STOP FORGETTING TO EXPORT
 module.exports = router;
