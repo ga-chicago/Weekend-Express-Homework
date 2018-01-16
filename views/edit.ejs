@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Edit <%=whovian.name %></title>
+</head>
+<body>
+	<h1>Edit <%=whovian.name %></h1>
+	<form action="/whovians/<%=whovian.id %>/?_method=PUT" method="POST">
+		Name: <input type="text" name="name" value="<%=whovian.name %>">
+		<br>
+		Type: <input type="text" name="type" value="<%=whovian.type %>">
+		<br>
+		Species: <input type="text" name="species" value="<%=whovian.species %>">
+		<br>
+		Birthdate: <input type="text" name="birthDate" value="<%=whovian.birthDate %>">
+		<br>
+		Skills: <input type="text" name="skills" value="<%=whovian.skills %>">
+		<br>
+		Friend: <input type="checkbox" name="friend" 
+			<% if (whovian.friend === true) { %> checked <% } %> >
+		<br>
+		Seasons: <input type="text" name="seasons" value="<%=whovian.seasons %>">
+		<br>
+		<input type="submit" name="" value="Submit Character">
+	</form>
+
+</body>
+</html>

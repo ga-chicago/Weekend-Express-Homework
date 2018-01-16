@@ -9,7 +9,7 @@ const Whovian = require('../models/who.js');
 
 
 
-// NEW ROUTE
+// NEW ROUTE (give the user the form to add characters)
 router.get('/new', (req, res) => {
 	res.render('new.ejs');
 })
@@ -52,11 +52,33 @@ router.get('/:id', (req, res) => {
 		if(err) console.log(err);
 		res.render('show.ejs', { whovian: foundWhovian})
 	})
-	
+});
+
+// EDIT ROUTE (give the user the form to add characters)
+router.get('/:id/edit', (req, res) => {
+	Whovian.findById(req.params.id, (err, foundWhovian) => { 
+		if(err) console.log(err);
+		res.render('edit.ejs', { whovian: foundWhovian });
+	})
 })
-// EDIT ROUTE
 
 // UPDATE
+router.put('/:id', (req, res) => {
+	// create boolean in friend field
+	if(req.body.friend === 'on') {
+		req.body.friend = true;
+	} else {
+		req.body.friend = false;
+	}
+
+	// copying what Jim did in class and just passing req.body as the new object! (I typed it all out before)
+	Whovian.findByIdAndUpdate(req.params.id, 
+		req.body, 
+		(err, updatedModel) => {
+			if(err) console.log(err);
+			res.redirect('/whovians')
+	})
+})
 
 // DELETE ROUTE
 

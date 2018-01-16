@@ -11,6 +11,9 @@
 	<ul>
 		<% for (let i = 0; i < whovians.length; i++) { %>
 			<li><a href="whovians/<%=whovians[i].id %>"><%= whovians[i].name %></a></li>
+			<nav>
+				<a href="whovians/<%=whovians[i].id %>/edit">(Edit)</a>
+			</nav>
 		<% } %>
 	</ul>
 </body>

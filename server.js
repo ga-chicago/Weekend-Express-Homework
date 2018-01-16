@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
+const methodOverride = require('method-override');
 
 
 // DB (need to require database)
@@ -9,6 +10,7 @@ require('./db/db.js');
 
 // MIDDLEWARE
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(methodOverride('_method'));
 
 
 // CONTROLLER
