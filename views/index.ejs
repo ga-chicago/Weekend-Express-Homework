@@ -1,0 +1,27 @@
+<html>
+<head>
+	<title>Movie App</title>
+	<link rel="stylesheet" type="text/css" href="/css/index.css">
+</head>
+<body>
+	<h1>Movie App</h1>
+	<div class="flex-container">
+		
+		<a href="/movies/new" class="flex-item">
+			<div class="new">Add a new movie</div>
+		</a>
+		<% for (let i = 0; i < movies.length; i++) { %>
+			<div class="flex-item">
+				<a href="/movies/<%= movies[i].id %>">
+					
+						<img height="150" width="100" src="<%= movies[i].img %>">
+					
+				</a>
+				<form action="/movies/<%= movies[i].id %>?_method=DELETE" method="POST">
+					<input type="submit" value="delete">
+				</form>
+			</div>
+		<% } %>
+	</div>
+</body>
+</html>

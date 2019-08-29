@@ -1,0 +1,29 @@
+body {
+  background-color: #5B83AD;
+  color: white;
+}
+.flex-container {
+  display: flex;
+  max-width: 960px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+.flex-item {
+  margin: 10px;
+}
+h1 {
+  text-align: center;
+  margin: 30px;
+}
+#new-movie {
+  text-align: center;
+  display: block;
+}
+.new {
+  line-height: 1.5;
+  border: 1px solid white;
+  height: 150px;
+  width: 100px;
+  font-size: 20;
+  text-align: center;
+}
